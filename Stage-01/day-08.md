@@ -41,7 +41,7 @@ This confirms Ansible is installed globally and available for all users.
 - Ansible is a powerful automation and configuration management tool.
 - Installing via pip ensures teams can match exact versions across environments.
 - Critical for consistency in DevOps pipelines and when reproducing issues across environments.
-- 
+
  <img width="700" height="760" alt="Screenshot from 2025-09-28 22-29-55" src="https://github.com/user-attachments/assets/1bdfa04f-3b58-466f-97f6-854cf8067051" />
 
   
