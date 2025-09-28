@@ -1,12 +1,4 @@
 # Day 01 – Linux User Setup with Non-Interactive Shell
-📅 Date: 2025-08-10
-
----
-
-## Challenge Overview
-As part of **KodeKloud’s 100 Days of DevOps Challenge**, I’m documenting my daily learnings to reinforce my understanding and build a strong DevOps portfolio.
-
-**Day 01 focused on a fundamental Linux administration task: creating a user with a non-interactive shell.**
 
 - **Task:** Create a service account for a backup agent tool.
 - **Goal:** Ensure the account cannot be used for interactive login.
@@ -57,7 +49,7 @@ ravi:x:1002:1002::/home/ravi:/sbin/nologin
 
 ---
 
-## Deep Dive: Why This Matters
+## Why This Matters
 - `/sbin/nologin` prevents shell login but allows background processes or automation tasks.
 - `/bin/false` is an alternative that immediately exits with an error.
 - **Security Impact:**
@@ -93,8 +85,6 @@ chmod 750 /home/backupagent
 - **Database Services (MySQL, Postgres):** use service accounts with no login.
 - **CI/CD Runners (Jenkins, GitHub Actions):** use restricted service accounts.
 
-This demonstrates my ability to manage Linux users securely in production environments.
-
 ---
 
 ## Key Learnings
@@ -104,9 +94,3 @@ This demonstrates my ability to manage Linux users securely in production enviro
 - Best practices for managing **service accounts**.
 
 ---
-
-## Skills Gained
-- Linux User Management
-- System Security & Hardening
-- Service Account Administration
-- SSH & Remote Server Access
