@@ -1,0 +1,110 @@
+# Day 01 – Linux User Setup with Non-Interactive Shell
+---
+
+## Challenge Overview
+As part of **KodeKloud’s 100 Days of DevOps Challenge**, I’m documenting my daily learnings to reinforce my understanding and build a strong DevOps portfolio.
+
+**Day 01 focused on a fundamental Linux administration task: creating a user with a non-interactive shell.**
+
+- **Task:** Create a service account for a backup agent tool.
+- **Goal:** Ensure the account cannot be used for interactive login.
+- **Why Important:** Service accounts must follow the **Principle of Least Privilege** to improve security in production systems.
+
+---
+
+## Technical Walkthrough
+
+### Step 1: Access the App Server
+```bash
+ssh steve@stapp02
+```
+- Connects to the application server securely via SSH.
+
+### Step 2: Switch to Root User
+```bash
+sudo su -
+```
+- `sudo` gives admin privileges.
+- `su -` loads the full root environment (safer for system changes).
+
+### Step 3: Check if User Exists
+```bash
+id ravi
+```
+Output when the user doesn’t exist:
+```
+id: ravi: no such user
+```
+
+### Step 4: Create User with Non-Interactive Shell
+```bash
+adduser ravi -s /sbin/nologin
+```
+- `-s /sbin/nologin` ensures no shell login is allowed.
+
+### Step 5: Verify User Creation
+```bash
+id ravi
+cat /etc/passwd | grep ravi
+```
+Example output:
+```
+ravi:x:1002:1002::/home/ravi:/sbin/nologin
+```
+- Confirms user exists and has `/sbin/nologin` shell.
+
+---
+
+## Deep Dive: Why This Matters
+- `/sbin/nologin` prevents shell login but allows background processes or automation tasks.
+- `/bin/false` is an alternative that immediately exits with an error.
+- **Security Impact:**
+  - Reduces attack surface
+  - Restricts unauthorized shell access
+  - Meets compliance/security requirements
+
+---
+
+## Best Practices for Service Accounts
+- Use descriptive usernames (e.g., `backupagent`, `monitoring`).
+- Restrict home directory permissions:
+```bash
+chmod 750 /home/backupagent
+```
+- Configure limited sudo rules if needed (`/etc/sudoers.d/`).
+- Monitor account usage:
+```bash
+lastlog -u backupagent
+grep backupagent /var/log/auth.log
+```
+Example creation:
+```bash
+adduser backupagent -s /sbin/nologin -c "Automated Backup Service"
+chmod 750 /home/backupagent
+```
+
+---
+
+## Real-World Relevance
+- **Backup Agents (rsync, tar, Bacula):** need file access, not shell.
+- **Web Servers (Nginx, Apache):** run under non-interactive users.
+- **Database Services (MySQL, Postgres):** use service accounts with no login.
+- **CI/CD Runners (Jenkins, GitHub Actions):** use restricted service accounts.
+
+This demonstrates my ability to manage Linux users securely in production environments.
+
+---
+
+## Key Learnings
+- Creating users with **non-interactive shells** in Linux.
+- Why `/sbin/nologin` improves security.
+- Using `sudo su -` to get the correct root environment.
+- Best practices for managing **service accounts**.
+
+---
+
+## Skills Gained
+- Linux User Management
+- System Security & Hardening
+- Service Account Administration
+- SSH & Remote Server Access
