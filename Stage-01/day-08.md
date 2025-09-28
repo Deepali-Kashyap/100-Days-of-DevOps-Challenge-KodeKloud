@@ -24,7 +24,7 @@ which ansible
 - Displays the binary path of Ansible.
 - Example output:
 ```
-/usr/bin/ansible
+/usr/local/bin/ansible
 ```
 This confirms Ansible is installed globally and available for all users.
 
