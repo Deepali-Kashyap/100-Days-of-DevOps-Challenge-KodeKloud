@@ -71,3 +71,6 @@ ls -l
 You should see:
 
 xfusioncorp_blog.zip
+
+<img width="600" height="629" alt="Screenshot from 2025-10-14 22-27-42" src="https://github.com/user-attachments/assets/438b4562-5425-4db7-b9eb-92677138392c" />
+
