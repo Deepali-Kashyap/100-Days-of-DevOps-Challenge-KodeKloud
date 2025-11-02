@@ -79,5 +79,5 @@
 ### Key Learnings
 - Setting up and configuring a LAMP stack on multiple servers.  
 - Creating and managing databases and users in MariaDB.  
-- Configuring Apache for custom ports.  
+- Configuring Apache for custom ports.
 - Integrating PHP and database connectivity for web applications.
