@@ -17,3 +17,15 @@ Stage 1 focused on mastering essential Linux and server administration skills �
 * Installation and configuration of Ansible, MariaDB, Tomcat, Nginx, PostgreSQL, and LAMP stack
 * Network services, IPTables, and SSL setup for Nginx
 
+## ⚙️ Stage 2: Version Control & Containerization (Days 21 – 47)
+
+Stage 2 focused on mastering Git workflows and Docker fundamentals — from repository management and branching strategies to building, networking, and deploying containers.
+
+### ✅ Completed Tasks
+
+* Git setup, repository management, branching, merging, and pull requests
+* Advanced Git operations: revert, cherry-pick, rebase, hooks, and conflict resolution
+* Docker installation, image management, and container operations
+* Writing Dockerfiles, configuring networks, mapping ports, and using Docker Compose
+* Deploying web and Python applications inside containers
+
