@@ -1,4 +1,4 @@
-## Day 41: Write a Docker File
+## Day 42: Create a Docker Network
 
 **Challenge:** Create a custom Docker macvlan network for isolated container communication on Application Server 3.
 
