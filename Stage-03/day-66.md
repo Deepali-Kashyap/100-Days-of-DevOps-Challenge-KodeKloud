@@ -148,12 +148,13 @@ spec:
 --- 
 ### Step 6: Apply All Resources
 
-
+```
 kubectl apply -f mysql-pv.yaml
 kubectl apply -f mysql-pvc.yaml
 kubectl apply -f mysql-secrets.yaml
 kubectl apply -f mysql-deployment.yaml
 kubectl apply -f mysql-service.yaml
+```
 
 --- 
 ### Outcome & Key Learnings
